@@ -23,8 +23,16 @@ class KontaktController extends FrontController
           'svrha'=>$request->input('svrha'),
           'poruka'=>$request->input('poruka')
         ];
-
-        \Mail::to('*************')->send(new KontaktMail($obj));
-        return redirect()->back()->with('poruka','Uspešno ste poslali poruku');
+        
+        try{
+           \Mail::to('*************')->send(new KontaktMail($obj));
+            Aktivnost::store("Poslata pouka",$request->ip());
+            return redirect()->back()->with('poruka','Uspešno ste poslali poruku');
+        }
+        catch(\Exception $e){
+            Aktivnost::store("Greška : {$e->getMessage()}",$request->ip());
+            return redirect()->back()->with('greska','Greška na serveru! Molimo pokušajte kasnije');
+        }
+        
     }
 }
