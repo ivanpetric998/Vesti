@@ -10,6 +10,7 @@ use App\Http\Models\Vest;
 use App\Http\Models\VestTag;
 use App\Http\Requests\InsertVestRequest;
 use App\Http\Requests\UpdateVestRequest;
+use Illuminate\Http\Request;
 use App\Services\VestiService;
 class VestiController extends AdminFrontController
 {
