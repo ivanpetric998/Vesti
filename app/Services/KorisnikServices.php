@@ -19,15 +19,9 @@ class KorisnikServices
           'datumAzuriranja'=>date("Y-m-d H:i:s"),
         ];
 
-        if($request->has('aktivan')){
-            $obj['aktivan']=$request->input('aktivan');
-        }
-        else{
-            $obj['aktivan']=null;
-        }
-
         if($request->has('uloga')){
             $obj['idUloga']=$request->input('uloga');
+            $obj['aktivan']=$request->input('aktivan');
         }
 
         $lozinka=$request->input('lozinka');
