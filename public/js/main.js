@@ -1,4 +1,4 @@
-const baseUrl="http://localhost:8000/";
+//const baseUrl="http://localhost:8000/";
 const regExForEditPost=new RegExp(`^${baseUrl}admin\/vesti\/[0-9]+\/edit$`);
 const regExForAdminNewsPage=new RegExp(`^${baseUrl}admin/vesti/create[\#]?$`);
 const regExForAdminUsersPage=new RegExp(`^${baseUrl}admin/korisnici/create[\#]?$`);
