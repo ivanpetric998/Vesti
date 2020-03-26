@@ -33,6 +33,10 @@
 
 </div>
 
+<script type="text/javascript">
+    const baseUrl='{{ asset('') }}';
+</script>
+
 @yield('scripts')
 
 </body>
